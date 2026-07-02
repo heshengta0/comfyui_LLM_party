@@ -1,0 +1,65 @@
+{
+  "23": {
+    "inputs": {
+      "model_name": "deepseek-r1:14b",
+      "base_url": "",
+      "api_key": "",
+      "is_ollama": false
+    },
+    "class_type": "LLM_api_loader",
+    "_meta": {
+      "title": "☁️API LLM加载器"
+    }
+  },
+  "30": {
+    "inputs": {
+      "system_prompt": "你一个强大的人工智能助手。",
+      "user_prompt": "你好，帮我写一首古诗吧",
+      "temperature": 0.7,
+      "is_memory": "enable",
+      "is_tools_in_sys_prompt": "disable",
+      "is_locked": "disable",
+      "main_brain": "enable",
+      "max_length": 1920,
+      "imgbb_api_key": "",
+      "conversation_rounds": 100,
+      "historical_record": "",
+      "is_enable": true,
+      "stream": false,
+      "model": [
+        "23",
+        0
+      ]
+    },
+    "class_type": "LLM",
+    "_meta": {
+      "title": "☁️API LLM通用链路"
+    }
+  },
+  "31": {
+    "inputs": {
+      "preview": "",
+      "source": [
+        "30",
+        0
+      ]
+    },
+    "class_type": "PreviewAny",
+    "_meta": {
+      "title": "预览任意"
+    }
+  },
+  "32": {
+    "inputs": {
+      "preview": "",
+      "source": [
+        "30",
+        4
+      ]
+    },
+    "class_type": "PreviewAny",
+    "_meta": {
+      "title": "预览任意"
+    }
+  }
+}

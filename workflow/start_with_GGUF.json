@@ -1,0 +1,241 @@
+{
+  "last_node_id": 30,
+  "last_link_id": 45,
+  "nodes": [
+    {
+      "id": 11,
+      "type": "show_text_party",
+      "pos": {
+        "0": 1420,
+        "1": 240
+      },
+      "size": {
+        "0": 470,
+        "1": 350
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 37,
+          "widget": {
+            "name": "text"
+          },
+          "label": "text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6,
+          "label": "STRING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "show_text_party"
+      },
+      "widgets_values": [
+        "",
+        "你好！我是一个基于 transformer 的语言模型，主要用于回答问题、生成文本、进行对话等任务。"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 30,
+      "type": "GGUFLoader",
+      "pos": {
+        "0": 540,
+        "1": 230
+      },
+      "size": {
+        "0": 315,
+        "1": 130
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "CUSTOM",
+          "links": [
+            45
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "model"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GGUFLoader"
+      },
+      "widgets_values": [
+        "D:\\AI\\mychat\\model\\llama-gguf\\Meta-Llama-3.1-8B-Instruct-IQ4_XS.gguf",
+        512,
+        31,
+        8
+      ]
+    },
+    {
+      "id": 23,
+      "type": "LLM_local",
+      "pos": {
+        "0": 939,
+        "1": 242
+      },
+      "size": {
+        "0": 396.04949951171875,
+        "1": 462
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "CUSTOM",
+          "link": 45,
+          "label": "model"
+        },
+        {
+          "name": "tokenizer",
+          "type": "CUSTOM",
+          "link": null,
+          "label": "tokenizer"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": null,
+          "label": "image"
+        },
+        {
+          "name": "system_prompt_input",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "system_prompt_input"
+          },
+          "label": "system_prompt_input"
+        },
+        {
+          "name": "user_prompt_input",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "user_prompt_input"
+          },
+          "label": "user_prompt_input"
+        },
+        {
+          "name": "tools",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "tools"
+          },
+          "label": "tools"
+        },
+        {
+          "name": "file_content",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "file_content"
+          },
+          "label": "file_content"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "assistant_response",
+          "type": "STRING",
+          "links": [
+            37
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "assistant_response"
+        },
+        {
+          "name": "history",
+          "type": "STRING",
+          "links": null,
+          "shape": 3,
+          "label": "history"
+        },
+        {
+          "name": "tool",
+          "type": "STRING",
+          "links": null,
+          "shape": 3,
+          "label": "tool"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3,
+          "label": "image"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LLM_local"
+      },
+      "widgets_values": [
+        "",
+        "你好，你是什么模型",
+        "LLM-GGUF",
+        0.7,
+        512,
+        "disable",
+        "disable",
+        "enable",
+        "",
+        "",
+        "",
+        "",
+        100,
+        "",
+        true
+      ]
+    }
+  ],
+  "links": [
+    [
+      37,
+      23,
+      0,
+      11,
+      0,
+      "STRING"
+    ],
+    [
+      45,
+      30,
+      0,
+      23,
+      0,
+      "CUSTOM"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8140274938684305,
+      "offset": [
+        -397.2556050341024,
+        -44.24046684936329
+      ]
+    }
+  },
+  "version": 0.4
+}

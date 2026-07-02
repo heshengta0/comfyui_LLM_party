@@ -1,0 +1,55 @@
+{
+  "24": {
+    "inputs": {
+      "model_name_or_path": "D:\\AI\\mychat\\model\\Qwen2-1.5B",
+      "device": "auto",
+      "dtype": "float32",
+      "is_locked": true
+    },
+    "class_type": "LLM_local_loader",
+    "_meta": {
+      "title": "🖥️本地LLM加载器"
+    }
+  },
+  "25": {
+    "inputs": {
+      "system_prompt": "你一个强大的人工智能助手。",
+      "user_prompt": "你好",
+      "model_type": "LLM",
+      "temperature": 0.7,
+      "max_length": 512,
+      "is_memory": "enable",
+      "is_locked": "disable",
+      "main_brain": "enable",
+      "conversation_rounds": "",
+      "historical_record": "",
+      "is_enable": "",
+      "is_enable_system_role": "",
+      "model": [
+        "24",
+        0
+      ],
+      "tokenizer": [
+        "24",
+        1
+      ]
+    },
+    "class_type": "LLM_local",
+    "_meta": {
+      "title": "🖥️本地LLM通用链路"
+    }
+  },
+  "26": {
+    "inputs": {
+      "preview": "",
+      "source": [
+        "25",
+        0
+      ]
+    },
+    "class_type": "PreviewAny",
+    "_meta": {
+      "title": "预览任意"
+    }
+  }
+}

@@ -1,0 +1,373 @@
+{
+  "last_node_id": 32,
+  "last_link_id": 45,
+  "nodes": [
+    {
+      "id": 23,
+      "type": "LLM_local",
+      "pos": [
+        870,
+        170
+      ],
+      "size": [
+        400,
+        510
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "CUSTOM",
+          "link": 43,
+          "label": "model"
+        },
+        {
+          "name": "tokenizer",
+          "type": "CUSTOM",
+          "link": 44,
+          "label": "tokenizer",
+          "shape": 7
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 42,
+          "label": "image",
+          "shape": 7
+        },
+        {
+          "name": "system_prompt_input",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "system_prompt_input"
+          },
+          "label": "system_prompt_input"
+        },
+        {
+          "name": "user_prompt_input",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "user_prompt_input"
+          },
+          "label": "user_prompt_input"
+        },
+        {
+          "name": "tools",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "tools"
+          },
+          "label": "tools"
+        },
+        {
+          "name": "file_content",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "file_content"
+          },
+          "label": "file_content"
+        },
+        {
+          "name": "extra_parameters",
+          "type": "DICT",
+          "link": null,
+          "shape": 7,
+          "label": "extra_parameters"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "assistant_response",
+          "type": "STRING",
+          "links": [
+            37
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "assistant_response"
+        },
+        {
+          "name": "history",
+          "type": "STRING",
+          "links": [
+            45
+          ],
+          "shape": 3,
+          "label": "history"
+        },
+        {
+          "name": "tool",
+          "type": "STRING",
+          "links": null,
+          "shape": 3,
+          "label": "tool"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3,
+          "label": "image"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LLM_local"
+      },
+      "widgets_values": [
+        "",
+        "那这张图中画了什么哇",
+        "VLM(testing)",
+        0.7,
+        1920,
+        "enable",
+        "disable",
+        "enable",
+        "",
+        "",
+        "",
+        "",
+        100,
+        "",
+        true,
+        true,
+        true,
+        [
+          false,
+          true
+        ]
+      ]
+    },
+    {
+      "id": 27,
+      "type": "LoadImage",
+      "pos": [
+        520,
+        390
+      ],
+      "size": [
+        320,
+        314
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            42
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "图像"
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "遮罩"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "f5644f22b055fd93bba297c0af8a8bf2 (1).jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 29,
+      "type": "show_text_party",
+      "pos": [
+        1300,
+        410
+      ],
+      "size": [
+        350,
+        300
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 45,
+          "widget": {
+            "name": "text"
+          },
+          "label": "text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6,
+          "label": "STRING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "show_text_party"
+      },
+      "widgets_values": [
+        "",
+        "**System:** \n\n**User:** 图中画了什么哇\n\n**Assistant:** 这个图画的是一个女孩，女孩的头上是黄色的头发，女孩的头发上面有两个小白云，女孩的眼睛是蓝色的，女孩的衣服是粉色的，女孩的衣服是短裙，女孩的双臂是向前伸出的。背景是蓝色的天空和绿色的草地。\n\n**User:** 那这张图中画了什么哇\n\n**Assistant:** 这个图画的是一个树木，树木的树干是棕色的，树木的树枝和树叶是绿色的，树木的树枝上有一个小鸟的巢，树木的树枝上有一个小鸟，树木的树干上有一个嘴巴，树木的树干上有两个眼睛。背景是蓝色的天空和绿色的草地。\n\n"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "show_text_party",
+      "pos": [
+        1320,
+        160
+      ],
+      "size": [
+        330,
+        170
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 37,
+          "widget": {
+            "name": "text"
+          },
+          "label": "text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6,
+          "label": "STRING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "show_text_party"
+      },
+      "widgets_values": [
+        "",
+        "这个图画的是一个树木，树木的树干是棕色的，树木的树枝和树叶是绿色的，树木的树枝上有一个小鸟的巢，树木的树枝上有一个小鸟，树木的树干上有一个嘴巴，树木的树干上有两个眼睛。背景是蓝色的天空和绿色的草地。"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "vlmLoader",
+      "pos": [
+        520,
+        170
+      ],
+      "size": [
+        320,
+        130
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "CUSTOM",
+          "links": [
+            43
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "model"
+        },
+        {
+          "name": "tokenizer(processor)",
+          "type": "CUSTOM",
+          "links": [
+            44
+          ],
+          "slot_index": 1,
+          "shape": 3,
+          "label": "tokenizer(processor)"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "vlmLoader"
+      },
+      "widgets_values": [
+        "D:\\AI\\mychat\\model\\llama3.2",
+        "auto",
+        "bfloat16"
+      ]
+    }
+  ],
+  "links": [
+    [
+      37,
+      23,
+      0,
+      11,
+      0,
+      "STRING"
+    ],
+    [
+      42,
+      27,
+      0,
+      23,
+      2,
+      "IMAGE"
+    ],
+    [
+      43,
+      28,
+      0,
+      23,
+      0,
+      "CUSTOM"
+    ],
+    [
+      44,
+      28,
+      1,
+      23,
+      1,
+      "CUSTOM"
+    ],
+    [
+      45,
+      23,
+      1,
+      29,
+      0,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7972024500000031,
+      "offset": [
+        -77.78598519603644,
+        149.70969507204373
+      ]
+    }
+  },
+  "version": 0.4
+}

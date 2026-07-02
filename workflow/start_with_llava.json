@@ -1,0 +1,303 @@
+{
+  "last_node_id": 27,
+  "last_link_id": 42,
+  "nodes": [
+    {
+      "id": 11,
+      "type": "show_text_party",
+      "pos": {
+        "0": 1420,
+        "1": 240
+      },
+      "size": {
+        "0": 470,
+        "1": 360
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 37,
+          "widget": {
+            "name": "text"
+          },
+          "label": "text"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6,
+          "label": "STRING"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "show_text_party"
+      },
+      "widgets_values": [
+        "",
+        "这幅图片是一幅风格化的数字插图，描绘了一个拟人化的角色，类似于一个女性形象，具有夸张、卡通般的特征。这个角色有大大的蓝色眼睛，一个微笑的嘴巴，黄色的蝴蝶形状的头发，向上延伸并扩散，类似蝴蝶的翅膀。这个角色穿着一件无袖的粉色连衣裙，双臂展开，站在一个绿色背景前，暗示着草地，而背景是蓝色的，表示天空，头顶有白云。这幅图画是扁平的，具有数字艺术的简单、粗犷的外观，颜色鲜明，轮廓明显。"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 25,
+      "type": "LLavaLoader",
+      "pos": {
+        "0": 520,
+        "1": 140
+      },
+      "size": {
+        "0": 315,
+        "1": 178
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "CUSTOM",
+          "links": [
+            40
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "model"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LLavaLoader"
+      },
+      "widgets_values": [
+        "D:\\AI\\mychat\\model\\mincpm-gguf\\ggml-model-IQ3_M.gguf",
+        "D:\\AI\\mychat\\model\\mincpm-gguf\\mmproj-model-f16.gguf",
+        1836,
+        31,
+        8,
+        "minicpm-v-2.6"
+      ]
+    },
+    {
+      "id": 23,
+      "type": "LLM_local",
+      "pos": {
+        "0": 939,
+        "1": 242
+      },
+      "size": {
+        "0": 396.04949951171875,
+        "1": 506
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "CUSTOM",
+          "link": 40,
+          "label": "model"
+        },
+        {
+          "name": "tokenizer",
+          "type": "CUSTOM",
+          "link": null,
+          "label": "tokenizer",
+          "shape": 7
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 42,
+          "label": "image",
+          "shape": 7
+        },
+        {
+          "name": "system_prompt_input",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "system_prompt_input"
+          },
+          "label": "system_prompt_input"
+        },
+        {
+          "name": "user_prompt_input",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "user_prompt_input"
+          },
+          "label": "user_prompt_input"
+        },
+        {
+          "name": "tools",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "tools"
+          },
+          "label": "tools"
+        },
+        {
+          "name": "file_content",
+          "type": "STRING",
+          "link": null,
+          "widget": {
+            "name": "file_content"
+          },
+          "label": "file_content"
+        },
+        {
+          "name": "extra_parameters",
+          "type": "DICT",
+          "link": null,
+          "shape": 7,
+          "label": "extra_parameters"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "assistant_response",
+          "type": "STRING",
+          "links": [
+            37
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "assistant_response"
+        },
+        {
+          "name": "history",
+          "type": "STRING",
+          "links": null,
+          "shape": 3,
+          "label": "history"
+        },
+        {
+          "name": "tool",
+          "type": "STRING",
+          "links": null,
+          "shape": 3,
+          "label": "tool"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3,
+          "label": "image"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LLM_local"
+      },
+      "widgets_values": [
+        "你可以识别图片中的内容",
+        "图中画了什么哇",
+        "VLM-GGUF",
+        0.7,
+        1920,
+        "disable",
+        "disable",
+        "enable",
+        "",
+        "",
+        "",
+        "",
+        100,
+        "",
+        true,
+        ""
+      ]
+    },
+    {
+      "id": 27,
+      "type": "LoadImage",
+      "pos": {
+        "0": 520,
+        "1": 380
+      },
+      "size": {
+        "0": 320,
+        "1": 314
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            42
+          ],
+          "slot_index": 0,
+          "shape": 3,
+          "label": "图像"
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3,
+          "label": "遮罩"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "example.png",
+        "image"
+      ]
+    }
+  ],
+  "links": [
+    [
+      37,
+      23,
+      0,
+      11,
+      0,
+      "STRING"
+    ],
+    [
+      40,
+      25,
+      0,
+      23,
+      0,
+      "CUSTOM"
+    ],
+    [
+      42,
+      27,
+      0,
+      23,
+      2,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8954302432552737,
+      "offset": [
+        -284.7009552669667,
+        45.11122031996807
+      ]
+    }
+  },
+  "version": 0.4
+}
